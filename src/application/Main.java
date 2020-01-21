@@ -10,6 +10,7 @@ import javafx.scene.control.ScrollPane;
 
 
 public class Main extends Application {
+	private static Scene mainScene;
 	@Override
 	public void start(Stage stage) {
 		try {
@@ -17,7 +18,7 @@ public class Main extends Application {
 			ScrollPane parent = loader.load();
 			parent.setFitToHeight(true);
 			parent.setFitToWidth(true);
-			Scene mainScene = new Scene(parent);
+			mainScene = new Scene(parent);
 			stage.setScene(mainScene);
 			stage.setTitle("Principal");
 			stage.show();
@@ -25,7 +26,9 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	public static Scene getM() {
+		return mainScene;
+	}
 	public static void main(String[] args) {
 		launch(args);
 	}
